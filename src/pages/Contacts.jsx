@@ -21,7 +21,6 @@ export default function Contacts() {
             <Phonebook />
             <h2>Contacts</h2>
             <Contacts />
-            <h2>Find contact by name:</h2>
             <Filter />
             {isLoading && <Loader/>}
         </>
