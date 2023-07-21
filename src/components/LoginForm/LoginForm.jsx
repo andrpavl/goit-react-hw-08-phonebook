@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { logIn } from 'redux/Auth/operations';
 
 export const LoginForm = () => {
@@ -13,6 +14,7 @@ export const LoginForm = () => {
         password: form.elements.password.value,
       })
     );
+    toast.success('Welcome to your Phonebook')
     form.reset();
   };
 

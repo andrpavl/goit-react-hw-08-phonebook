@@ -1,29 +1,15 @@
-import { ContactsList } from "components/ContactList/ContactList";
-import { Filter } from "components/Filter/Filter";
-// import Loader from "components/Loader/Loader";
-import { Phonebook } from "components/Phonebook/Phonebook";
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { fetchContacts } from "redux/Contacts/operations";
-// import { selectIsLoading } from "redux/Contacts/selectors";
+import { ContactsList } from 'components/ContactList/ContactList';
+import { Filter } from 'components/Filter/Filter';
+import { Phonebook } from 'components/Phonebook/Phonebook';
 
-export default function Contacts() { 
-    
-    // const dispatch = useDispatch();
-    // const isLoading = useSelector(selectIsLoading);
-
-    // useEffect(() => {
-    //     dispatch(fetchContacts())
-    // }, [dispatch]);
-
-    return (
-      <>
-        <h2>Phonebook</h2>
-        <Phonebook />
-        <h2>Contacts</h2>
-        <ContactsList />
-        <Filter />
-        {/* {isLoading && <Loader/>} */}
-      </>
-    );
+export default function Contacts() {
+  return (
+    <>
+      <h2>Phonebook</h2>
+      <Phonebook />
+      <h2>Contacts</h2>
+      <Filter />
+      <ContactsList />
+    </>
+  );
 }
