@@ -1,3 +1,4 @@
+import { ContactsList } from "components/ContactList/ContactList";
 import { Filter } from "components/Filter/Filter";
 // import Loader from "components/Loader/Loader";
 import { Phonebook } from "components/Phonebook/Phonebook";
@@ -16,13 +17,13 @@ export default function Contacts() {
     // }, [dispatch]);
 
     return (
-        <>
-            <h2>Phonebook</h2>
-            <Phonebook />
-            <h2>Contacts</h2>
-            <Contacts />
-            <Filter />
-            {/* {isLoading && <Loader/>} */}
-        </>
-    )
+      <>
+        <h2>Phonebook</h2>
+        <Phonebook />
+        <h2>Contacts</h2>
+        <ContactsList />
+        <Filter />
+        {/* {isLoading && <Loader/>} */}
+      </>
+    );
 }
