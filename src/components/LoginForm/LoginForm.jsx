@@ -1,6 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { logIn } from 'redux/Auth/operations';
+import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
+import { StyledForm } from 'components/RegisterForm/StyledForm';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -14,21 +17,33 @@ export const LoginForm = () => {
         password: form.elements.password.value,
       })
     );
-    toast.success('Welcome to your Phonebook')
+    toast.success('Welcome to your Phonebook');
     form.reset();
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <StyledForm autoComplete="off" onSubmit={handleSubmit}>
+      <TextField
+        name="email"
+        type="email"
+        size="small"
+        required
+        id="outlined-required"
+        label="Email"
+        helperText="Please, enter your e-mail adress"
+      />
+      <TextField
+        name="password"
+        type="password"
+        size="small"
+        required
+        label="Password"
+        autoComplete="off"
+        helperText="And your password"
+      />
+      <Button variant="outlined" type="submit">
+        Log in
+      </Button>
+    </StyledForm>
   );
 };
