@@ -28,6 +28,7 @@ export const RegisterForm = () => {
         required
         label="Name"
         helperText="Please, enter your name"
+        
       />
       <TextField
         name="email"
@@ -36,6 +37,7 @@ export const RegisterForm = () => {
         required
         label="Email"
         helperText="Please, enter your e-mail adress"
+        
       />
       <TextField
         name="password"

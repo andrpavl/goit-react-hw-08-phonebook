@@ -11,6 +11,7 @@ import { addContact, fetchContacts } from 'redux/Contacts/operations';
 import Loader from 'components/Loader/Loader';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Button from '@mui/material/Button';
 
 export function Phonebook() {
   const dispatch = useDispatch();
@@ -77,11 +78,12 @@ export function Phonebook() {
         <label htmlFor={nameId} className={css.label}>
           Name
           <input
-            placeholder="Enter name"
-            className={css.input}
+            className="form-control"
+            placeholder='Enter name'
+            aria-label="default input example"
+            type="text"
             value={name}
             onChange={handleChange}
-            type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -91,21 +93,22 @@ export function Phonebook() {
         <label htmlFor={telId} className={css.label}>
           Phone
           <input
-            placeholder="Enter phone number"
-            className={css.input}
             onChange={handleChange}
             value={number}
-            type="tel"
             name="number"
+            className="form-control"
+            required
+            type="tel"
+            placeholder="Enter phone number"
+            aria-label="default input example"
             pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-          />
+          ></input>
         </label>
 
-        <button className={css.btnAdd} type="submit">
+        <Button variant="contained" type="submit">
           Add contact
-        </button>
+        </Button>
       </form>
       <ToastContainer />
     </div>

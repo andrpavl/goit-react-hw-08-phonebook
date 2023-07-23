@@ -7,15 +7,6 @@
 }
 .list > li {
   margin-bottom: 16px;
+  
 }
-.deleteBtn {
-  margin-left: 16px;
-  padding: 6px;
-  background-color: bisque;
-  border-radius: 6px;
-  border: none;
-}
-.deleteBtn:hover {
-  background-color: blue;
-  color: antiquewhite;
-}
+

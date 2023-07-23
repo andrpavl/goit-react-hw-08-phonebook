@@ -12,16 +12,19 @@ export function Filter() {
   };
 
   return (
-    <label htmlFor="name">
-      Find contacts by name
-      <input
-        className={css.filterInput}
-        placeholder="Enter name"
-        name="name"
-        type="text"
-        value={value}
-        onChange={handleFilterChange}
-      />
-    </label>
+    <div className={css.cont}>
+      <label htmlFor="name" className={css.label}>
+        Find contacts by name
+        <input
+          placeholder="Enter name"
+          value={value}
+          onChange={handleFilterChange}
+          style={{ marginLeft: '20px', width: '200px' }}
+          className="form-control"
+          aria-label="default input example"
+          type="text"
+        />
+      </label>
+    </div>
   );
 }
