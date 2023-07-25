@@ -6,7 +6,6 @@ import { selectIsRefreshing } from 'redux/Auth/selectors';
 import { Layout } from './Layout';
 import { RestrictedRoute } from './RestrictedRoute';
 import PrivateRoute from './PrivateRoute';
-import Loader from './Loader/Loader';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -23,13 +22,10 @@ export const App = () => {
 
   return (
     <>
-      {isRefreshing ? (
-        <Loader />
-      ) : (
+      {!isRefreshing && (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-
             <Route
               path="register"
               element={

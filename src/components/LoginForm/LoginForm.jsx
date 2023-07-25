@@ -1,13 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { logIn } from 'redux/Auth/operations';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import { StyledForm } from 'components/RegisterForm/StyledForm';
+import { selectUser } from 'redux/Auth/selectors';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-
+  const existUser = useSelector(selectUser)
+  console.log(existUser)
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -22,7 +24,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <StyledForm autoComplete="off" onSubmit={handleSubmit}>
+    <StyledForm autocomplete="off" onSubmit={handleSubmit}>
       <TextField
         name="email"
         type="email"

@@ -20,7 +20,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <StyledForm autoComplete="off" onSubmit={handleSubmit} >
+    <StyledForm autocomplete="off" onSubmit={handleSubmit} >
       <TextField
         name="name"
         type="text"
@@ -46,7 +46,6 @@ export const RegisterForm = () => {
         required
         label="Password"
         helperText="And your password"
-        autoComplete="off"
       />
       <Button variant="outlined" type="submit">
         Register
