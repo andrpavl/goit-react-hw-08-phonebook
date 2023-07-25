@@ -1,18 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { logIn } from 'redux/Auth/operations';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import { StyledForm } from 'components/RegisterForm/StyledForm';
-import { selectUser } from 'redux/Auth/selectors';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  const existUser = useSelector(selectUser)
-  console.log(existUser)
+
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+
     dispatch(
       logIn({
         email: form.elements.email.value,
@@ -20,6 +19,7 @@ export const LoginForm = () => {
       })
     );
     toast.success('Welcome to your Phonebook');
+
     form.reset();
   };
 
