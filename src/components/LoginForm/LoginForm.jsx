@@ -17,9 +17,10 @@ export const LoginForm = () => {
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
-    );
-    toast.success('Welcome to your Phonebook');
-
+    )
+      .unwrap()
+      .then(() => toast.success('Welcome to your Phonebook'))
+      .catch(() => toast.error('Invalid email or password. Please try again.'));
     form.reset();
   };
 
